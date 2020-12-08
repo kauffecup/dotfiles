@@ -7,6 +7,7 @@
 - link:
     ~/.alacritty.yml: alacritty.yml
     ~/Brewfile: Brewfile
+    ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim/init.vim: nvimrc
     ~/.config/nvim/plugins.vim: plugins.vim
