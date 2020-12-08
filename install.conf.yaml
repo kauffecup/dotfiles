@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.alacritty.yml: alacritty.yml
+    ~/Brewfile: Brewfile
+    ~/.tmux.conf: tmux.conf
+    ~/.config/nvim/init.vim: nvimrc
+    ~/.config/nvim/plugins.vim: plugins.vim
+    ~/.config/nvim/coc-settings.json: coc-settings.json
+    ~/.zshrc: zshrc
+    ~/.zsh_plugins.txt: zsh_plugins.txt
+
+- create:
+  - ~/workspace
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

@@ -1,0 +1,52 @@
+# Plugin Management
+# Running updatePlugins generates zsh_plugins.sh based on the contents of .zsh_plugins.txt
+# This needs to be run after adding/removing new plugins and to update existing ones.
+source ~/.zsh_plugins.sh
+updatePlugins(){
+  antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins.sh
+  antibody update
+}
+
+# Plugin Configuration
+# Bind keys for history substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# History
+HISTSIZE=10000 # Lines of history to keep in memory for current session
+HISTFILESIZE=10000 # Number of commands to save in the file
+SAVEHIST=10000 # Number of history entries to save to disk
+HISTFILE=~/.zsh_history # Where to save history to disk
+HISTDUP=erase # Erase duplicates in the history file
+setopt hist_ignore_dups # Ignore duplicates
+
+# Options - `man zshoptions`
+setopt append_history # Append history to the history file (no overwriting)
+setopt share_history # Share history across terminals
+setopt inc_append_history # Immediately append to the history file, not just when a term is killed
+
+# Preferred editor for local and remote sessions
+export EDITOR="nvim"
+
+# Add homebrew installations to path
+export PATH=/usr/local/bin:$PATH
+
+# Add User bin directory to path
+export PATH=$PATH:~/bin:~/squarespace/generated/bin:/usr/local/opt/imagemagick@6/bin
+
+export NVM_DIR="/Users/jkaufman/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Use ripgrep as default for fzf
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{.git/*,node_modules/*,**/.git/*,**/node_modules/*}'"
+
+# Squarespace Docker Env
+# Choose a directory where your different virtual environments will be stored
+# export WORKON_HOME=$HOME/.virtualenvs  # Or another directory of your choice
+# source /usr/local/bin/virtualenvwrapper.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jkaufman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jkaufman/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jkaufman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jkaufman/google-cloud-sdk/completion.zsh.inc'; fi
