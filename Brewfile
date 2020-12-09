@@ -1,5 +1,8 @@
+tap "homebrew/cask"
+
 # code / terminal
 cask 'alacritty'
+brew 'antibody'
 brew 'neovim'
 brew 'tmux'
 brew 'zsh'
@@ -10,3 +13,4 @@ brew 'ripgrep'
 
 # web
 brew 'nvm'
+brew 'yarn'

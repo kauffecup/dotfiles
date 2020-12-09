@@ -12,9 +12,15 @@
     ~/tmux_scripts/webpack.sh:
       path: webpack.sh
       create: true
-    ~/.config/nvim/init.vim: nvimrc
-    ~/.config/nvim/plugins.vim: plugins.vim
-    ~/.config/nvim/coc-settings.json: coc-settings.json
+    ~/.config/nvim/init.vim:
+      path: nvimrc
+      create: true
+    ~/.config/nvim/plugins.vim:
+      path: plugins.vim
+      create: true
+    ~/.config/nvim/coc-settings.json:
+      path: coc-settings.json
+      create: true
     ~/.zshrc: zshrc
     ~/.zsh_plugins.txt: zsh_plugins.txt
 
