@@ -9,6 +9,9 @@
     ~/Brewfile: Brewfile
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
+    ~/tmux_scripts/webpack.sh:
+      path: webpack.sh
+      create: true
     ~/.config/nvim/init.vim: nvimrc
     ~/.config/nvim/plugins.vim: plugins.vim
     ~/.config/nvim/coc-settings.json: coc-settings.json
