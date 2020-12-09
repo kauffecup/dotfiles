@@ -5,24 +5,24 @@
 - clean: ['~']
 
 - link:
-    ~/.alacritty.yml: alacritty.yml
-    ~/Brewfile: Brewfile
-    ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux.conf
+    ~/.alacritty.yml: alacritty/alacritty.yml
+    ~/Brewfile: brew/Brewfile
+    ~/.gitconfig: config/gitconfig
+    ~/.tmux.conf: tmux/tmux.conf
     ~/tmux_scripts/webpack.sh:
-      path: webpack.sh
+      path: tmux/webpack.sh
       create: true
     ~/.config/nvim/init.vim:
-      path: nvimrc
+      path: vim/nvimrc
       create: true
     ~/.config/nvim/plugins.vim:
-      path: plugins.vim
+      path: vim/plugins.vim
       create: true
     ~/.config/nvim/coc-settings.json:
-      path: coc-settings.json
+      path: vim/coc-settings.json
       create: true
-    ~/.zshrc: zshrc
-    ~/.zsh_plugins.txt: zsh_plugins.txt
+    ~/.zshrc: zsh/zshrc
+    ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
 
 - create:
   - ~/workspace
