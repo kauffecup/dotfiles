@@ -1,4 +1,13 @@
 tap "homebrew/cask"
+tap "AdoptOpenJDK/openjdk"
+
+# applications
+cask '1password'
+cask 'cloudapp'
+cask 'notion'
+cask 'slack'
+cask 'thingsmacsandboxhelper'
+cask 'spotify'
 
 # code / terminal
 cask 'alacritty'
@@ -10,7 +19,9 @@ brew 'zsh'
 # programs
 brew 'fzf'
 brew 'ripgrep'
+brew 'wget'
 
-# web
-brew 'nvm'
+# dev
+cask 'adoptopenjdk/openjdk/adoptopenjdk8'
+cask 'adoptopenjdk11'
 brew 'yarn'
