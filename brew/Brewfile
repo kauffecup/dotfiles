@@ -2,6 +2,7 @@ tap "homebrew/cask"
 tap "AdoptOpenJDK/openjdk"
 
 # applications
+# TODO mac app store mas things id?
 cask '1password'
 cask 'cloudapp'
 cask 'notion'
@@ -25,3 +26,9 @@ brew 'wget'
 cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 cask 'adoptopenjdk11'
 brew 'yarn'
+
+# ios
+brew 'swiftlint'
+brew 'rbenv'
+brew 'pyenv'
+brew 'watchman'

@@ -39,6 +39,12 @@ export NVM_DIR="/Users/jkaufman/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# rbenv config
+eval "$(rbenv init -)"
+
+# pyenv config
+eval "$(pyenv init -)"
+
 # Use ripgrep as default for fzf
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{.git/*,node_modules/*,**/.git/*,**/node_modules/*}'"
 
