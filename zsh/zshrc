@@ -46,7 +46,7 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
 # Use ripgrep as default for fzf
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{.git/*,node_modules/*,**/.git/*,**/node_modules/*}'"
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{.git/*,node_modules/*,**/.git/*,**/node_modules/*,**/.next/*}'"
 
 # Squarespace Docker Env
 # Choose a directory where your different virtual environments will be stored

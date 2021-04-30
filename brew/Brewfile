@@ -21,10 +21,13 @@ brew 'zsh'
 brew 'fzf'
 brew 'ripgrep'
 brew 'wget'
+brew 'imagemagick'
+brew 'ghostscript' # imagemagick dependency
 
 # dev
 cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 cask 'adoptopenjdk11'
+cask 'docker'
 brew 'yarn'
 
 # ios

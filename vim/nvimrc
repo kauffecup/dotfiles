@@ -91,6 +91,13 @@ endtry
 " Always do side by side diff
 set diffopt+=vertical
 
+" === Vim Prettier === "
+" Enable auto formatting when a config file can be found in the current directory or any parent directory
+let g:prettier#autoformat_config_present = 1
+
+" Allow auto formatting for files without @format or @prettier tag
+let g:prettier#autoformat_require_pragma = 1 " needs to be 1 for universal, but want 0 for photobook
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "

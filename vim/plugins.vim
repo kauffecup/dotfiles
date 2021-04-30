@@ -30,6 +30,9 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Uses prettier if available
+Plug 'prettier/vim-prettier'
+
 " === Git Plugins === "
 " Enable git changes to be shown in sign column
 Plug 'mhinz/vim-signify'
