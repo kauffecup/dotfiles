@@ -22,10 +22,11 @@
       path: vim/coc-settings.json
       create: true
     ~/.zshrc: zsh/zshrc
-    ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
+    ~/.zsh_plugins: zsh/plugins
 
 - create:
   - ~/workspace
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [./zsh/plugins/fzf/install, Installing fzf]
