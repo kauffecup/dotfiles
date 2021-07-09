@@ -1,5 +1,6 @@
 scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/lua/plugins.lua
 
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
@@ -35,18 +36,6 @@ set cmdheight=1
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
 
-" === Coc.nvim === "
-" use <tab> for trigger completion and navigate to next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
 " === NERDTree === "
 " Show hidden files/directories
 let g:NERDTreeShowHidden = 1
@@ -62,17 +51,13 @@ try
 
 " === Vim airline ==== "
 " Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline_extensions = ['branch', 'hunks']
 
 " Do not draw separators for empty sections (only for the active window) >
 let g:airline_skip_empty_sections = 1
 
 " Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-" Configure error/warning section to use coc.nvim
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " Hide the Nerdtree status line to avoid clutter
 let g:NERDTreeStatusline = ''
@@ -114,20 +99,13 @@ set termguicolors
 " Editor theme
 set background=dark
 try
-  let g:onedark_terminal_italics = 1
-  let g:airline_theme='onedark'
-  colorscheme onedark
+  colorscheme tokyonight
 catch
   colorscheme slate
 endtry
 
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
-
-" coc.nvim color changes
-hi! link CocErrorSign WarningMsg
-hi! link CocWarningSign Number
-hi! link CocInfoSign Type
 
 " Set fzf colors to match color scheme
 let g:fzf_colors =
@@ -190,11 +168,6 @@ nnoremap <bs> <c-w>W
 "  <leader>f - Opens current file location in NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
-
-" === coc.nvim === "
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
 
 " === fzf === "
 " <C-p> to search files (also moves cursor if on nerd tree)

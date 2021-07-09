@@ -8,57 +8,52 @@
 font:
   # Normal (roman) font face
   normal:
-    family: Operator Mono
+    family: OperatorMono Nerd Font
     style: Book
 
   # Bold font face
   bold:
-    family: Operator Mono
+    family: OperatorMono Nerd Font
     style: Medium
 
   # Italic font face
   italic:
-    family: Operator Mono
+    family: OperatorMono Nerd Font
     style: Book Italic
 
   # Point size
   size: 18.0
 
-# Colors (Tomorrow Night)
+
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    foreground: '0xABB2BF'
-    background: '0x282C34'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  cursor:
-    text: '0xFEFFFF'
-    cursor: '0xC7C7C7'
+    background: '0x24283b'
+    foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black: '0x282C34' 
-    red: '0xE06C75'
-    green: '0x98C379'
-    yellow: '0xE5C07B'
-    blue: '0x61AFEF'
-    magenta: '0xC678DD'
-    cyan: '0x56B6C2'
-    white: '0xABB2BF'
+    black:   '0x1D202F'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black: '0x6F7683'
-    red: '0xE78287'
-    green: '0xA7CB8B'
-    yellow: '0xDAAA78'
-    blue: '0x71BDF2'
-    magenta: '0xD190E3'
-    cyan: '0x65C1CD'
-    white: '0xFEFEFE'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }

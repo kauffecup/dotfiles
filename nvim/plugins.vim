@@ -21,12 +21,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " === Editing Plugins === "
-" Intellisense Engine
-" Run `:CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css`
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-
 " Fuzzy file and other searching
-" relios on `brew install fzf` and `brew install ripgrep`
+" relies on `brew install fzf` and `brew install ripgrep`
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -40,9 +36,20 @@ Plug 'mhinz/vim-signify'
 " Fun git stuff, also necessary to show branch in airline
 Plug 'tpope/vim-fugitive'
 
-" === Syntax Highlighting === "
-" All the things
-Plug 'sheerun/vim-polyglot'
+" === Language Server Configuration === "
+" common configurations for Neovim's built-in language server client
+Plug 'neovim/nvim-lspconfig'
+
+" lightweight companion plugin for nvim-lspconfig
+" adds the missing :LspInstall <language>
+Plug 'kabouzeid/nvim-lspinstall'
+
+" adds syntax highlighting based on tree-sitter
+" :TSInstall javascript typescript json css scss yaml
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " updates the parsers on update
+
+" Auto completion plugin for nvim
+Plug 'hrsh7th/nvim-compe'
 
 " === UI === "
 " File explorer with git indications
@@ -50,10 +57,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Colorscheme
-Plug 'https://github.com/joshdick/onedark.vim.git'
+Plug 'folke/tokyonight.nvim'
 
 " Customized vim status line
-Plug 'vim-airline/vim-airline'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Initialize plugin system
 call plug#end()
