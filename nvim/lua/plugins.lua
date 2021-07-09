@@ -1,7 +1,7 @@
 -- nvim-web-devicons config
 require'nvim-web-devicons'.setup {
- -- globally enable default icons (default to false)
- default = true;
+  -- globally enable default icons (default to false)
+  default = true;
 }
 
 -- lualine config
@@ -45,23 +45,52 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
--- :LspInstall typescript
+-- :LspInstall typescript efm
 local function setup_servers()
   require'lspinstall'.setup()
   local servers = require'lspinstall'.installed_servers()
+  -- Use a loop to conveniently call 'setup' on multiple servers and
   for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
-
-    -- Use a loop to conveniently call 'setup' on multiple servers and
-    -- map buffer local keybindings when the language server attaches
-    require'lspconfig'[server].setup {
-      -- The on_attach hook is used to only activate the bindings after the language server attaches to the current buffer.
-      on_attach = on_attach,
-      flags = {
-        debounce_text_changes = 150,
+    if server ~= "efm" then
+      -- map buffer local keybindings when the language server attaches
+      require'lspconfig'[server].setup {
+        -- The on_attach hook is used to only activate the bindings after the language server attaches to the current buffer.
+        on_attach = on_attach,
+        flags = {
+          debounce_text_changes = 150,
+        }
       }
-    }
-
+    else
+      -- Set up efm with eslint
+      local eslint = {
+        lintCommand = "npx eslint -f unix --stdin --stdin-filename ${INPUT}",
+        lintStdin = true,
+        lintFormats = {"%f:%l:%c: %m"},
+        lintIgnoreExitCode = true,
+      }
+      require'lspconfig'[server].setup {
+        on_attach = on_attach,
+        settings = {
+          rootMarkers = {".eslintrc.cjs", ".eslintrc", ".eslintrc.json", ".eslintrc.js"},
+          languages = {
+            javascript = {eslint},
+            javascriptreact = {eslint},
+            ["javascript.jsx"] = {eslint},
+            typescript = {eslint},
+            ["typescript.tsx"] = {eslint},
+            typescriptreact = {eslint}
+          }
+        },
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescript.tsx",
+          "typescriptreact"
+        },
+      }
+    end
   end
 end
 
@@ -99,12 +128,12 @@ local t = function(str)
 end
 
 local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
+  local col = vim.fn.col('.') - 1
+  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    return true
+  else
+    return false
+  end
 end
 
 -- Use (s-)tab to:
@@ -137,10 +166,6 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
   },
 }
 
