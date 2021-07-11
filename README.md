@@ -1,3 +1,13 @@
+# dot dot dot
+
+built on [dotbot](https://github.com/anishathalye/dotbot)
+
+## Install
+
+```sh
+./install
+```
+
 ## To Complete Setup
 
 ### Font
