@@ -25,3 +25,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [./zsh/plugins/fzf/install, Installing fzf]
+  - [cd ~ && brew bundle, Installing brew dependencies]
