@@ -23,6 +23,8 @@ require('packer').startup(function ()
     config = [[require('plugins/p-lualine')]]
   }
   use { 'hrsh7th/nvim-compe', config = [[require('plugins/p-compe')]] }
+  -- Enhancement Plugins
+  use { 'prettier/vim-prettier', run = 'npm install', config = [[require('plugins/p-vim-prettier')]] }
   -- Navigation Plugins
   use {
     'junegunn/fzf',
