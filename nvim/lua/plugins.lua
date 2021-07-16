@@ -45,8 +45,11 @@ require('packer').startup(function ()
   use 'kabouzeid/nvim-lspinstall'
   use { 'neovim/nvim-lspconfig', config = [[require('plugins/p-lspconfig')]] } -- config for both lspconfig and lspinstall
   -- Git Plugins
-  use 'mhinz/vim-signify'
-  use { 'tpope/vim-fugitive', config = [[require('plugins/p-vim-fugitive')]] }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = [[require('plugins/p-gitsigns')]]
+  }
   -- Color Theme
   use { 'folke/tokyonight.nvim', config = [[require('plugins/p-tokyonight')]] }
 end)
