@@ -18,20 +18,19 @@ require('packer').startup(function ()
   use { 'kyazdani42/nvim-web-devicons', config = [[require('plugins/p-nvim-web-devicons')]] }
   -- Interface Plugins
   use {
-    'hoob3rt/lualine.nvim',
-    requires = {{ 'nvim-web-devicons' }},
-    config = [[require('plugins/p-lualine')]]
+    "glepnir/galaxyline.nvim",
+    config = [[require('plugins/p-galaxyline')]],
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use { 'hrsh7th/nvim-compe', config = [[require('plugins/p-compe')]] }
   -- Enhancement Plugins
   use { 'prettier/vim-prettier', run = 'npm install', config = [[require('plugins/p-vim-prettier')]] }
   -- Navigation Plugins
   use {
-    'junegunn/fzf',
-    run = [[fn['fzf#install']()]],
-    config = [[require('plugins/p-fzf')]],
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    config = [[require('plugins/p-telescope')]]
   }
-  use 'junegunn/fzf.vim'
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {{ 'nvim-web-devicons' }},

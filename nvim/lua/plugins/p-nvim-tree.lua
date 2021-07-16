@@ -2,8 +2,9 @@ local cmd = vim.cmd
 local g = vim.g
 local nvim_set_keymap = vim.api.nvim_set_keymap
 
-nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<Cr>', {})
-nvim_set_keymap('n', '<leader>f', ':NvimTreeFindFile<Cr>', {})
+nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<Cr>', {})
+nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile<Cr>', {})
+nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<Cr>', {})
 
 local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
