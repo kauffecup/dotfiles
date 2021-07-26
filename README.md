@@ -29,5 +29,12 @@ Need to run PackerInstall first time opening `nvim`
 #### TSInstall
 
 ```sh
-:TSInstall javascript typescript json css scss yaml
+:TSInstall javascript typescript json css scss yaml lua
+```
+
+#### LspInstall
+
+```sh
+:LspInstall typescript
+:LspInstall efm
 ```

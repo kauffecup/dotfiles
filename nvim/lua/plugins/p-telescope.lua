@@ -18,7 +18,7 @@ require('telescope').setup{
 }
 
 vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-[>', ':Telescope buffers<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-o>', ':Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
   'n',
   '<Leader>f',
