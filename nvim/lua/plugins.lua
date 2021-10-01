@@ -35,7 +35,7 @@ require('packer').startup(function ()
   }
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {{ 'nvim-web-devicons' }},
+    requires = 'kyazdani42/nvim-web-devicons',
     config = [[require('plugins/p-nvim-tree')]],
   }
   -- Language Plugins
