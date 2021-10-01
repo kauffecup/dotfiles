@@ -15,11 +15,11 @@ require('packer').startup(function ()
   -- Package manager
   use 'wbthomason/packer.nvim'
   -- Base Dependencies
-  use { 'kyazdani42/nvim-web-devicons', config = [[require('plugins/p-nvim-web-devicons')]] }
+  use { 'kyazdani42/nvim-web-devicons', config = [[require('plugins/nvim-web-devicons')]] }
   -- Interface Plugins
   use {
     "glepnir/galaxyline.nvim",
-    config = [[require('plugins/p-galaxyline')]],
+    config = [[require('plugins/galaxyline')]],
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   use { 'folke/trouble.nvim', requires = {'nvim-web-devicons'}, config = [[require('plugins/trouble')]] }
@@ -35,39 +35,39 @@ require('packer').startup(function ()
     config = [[require('plugins/nvim-cmp')]],
   }
   -- Enhancement Plugins
-  use { 'prettier/vim-prettier', run = 'npm install', config = [[require('plugins/p-vim-prettier')]] }
-  use { 'windwp/nvim-autopairs', config = [[require('plugins/p-autopairs')]]  }
+  use { 'prettier/vim-prettier', run = 'npm install', config = [[require('plugins/vim-prettier')]] }
+  use { 'windwp/nvim-autopairs', config = [[require('plugins/nvim-autopairs')]]  }
   use 'tpope/vim-surround'
   -- Navigation Plugins
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-    config = [[require('plugins/p-telescope')]]
+    config = [[require('plugins/telescope')]]
   }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = [[require('plugins/p-nvim-tree')]],
+    config = [[require('plugins/nvim-tree')]],
   }
   -- Language Plugins
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = [[require('plugins/p-treesitter')]]
+    config = [[require('plugins/nvim-treesitter')]]
   }
   use 'kabouzeid/nvim-lspinstall'
-  use { 'neovim/nvim-lspconfig', config = [[require('plugins/p-lspconfig')]] } -- config for both lspconfig and lspinstall
+  use { 'neovim/nvim-lspconfig', config = [[require('plugins/nvim-lspconfig')]] } -- config for both lspconfig and lspinstall
   use {
     'jose-elias-alvarez/null-ls.nvim',
     requires = {'plenary.nvim', 'nvim-lspconfig'},
-    config = [[require('plugins/p-null-ls')]],
+    config = [[require('plugins/null-ls')]],
   }
   -- Git Plugins
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = [[require('plugins/p-gitsigns')]]
+    config = [[require('plugins/gitsigns')]]
   }
   -- Color Theme
-  use { 'folke/tokyonight.nvim', config = [[require('plugins/p-tokyonight')]] }
+  use { 'folke/tokyonight.nvim', config = [[require('plugins/tokyonight')]] }
 end)
