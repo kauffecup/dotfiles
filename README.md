@@ -18,6 +18,14 @@ This is a requirement for `nvim-web-devicons` to work.
 
 ### nvim
 
+### eslint_d
+
+This relies on eslint_d, to install:
+
+```sh
+npm install -g eslint_d
+```
+
 #### Packer
 
 Need to run PackerInstall first time opening `nvim`
@@ -36,5 +44,4 @@ Need to run PackerInstall first time opening `nvim`
 
 ```sh
 :LspInstall typescript
-:LspInstall efm
 ```

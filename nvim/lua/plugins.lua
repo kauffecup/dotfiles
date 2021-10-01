@@ -46,6 +46,11 @@ require('packer').startup(function ()
   }
   use 'kabouzeid/nvim-lspinstall'
   use { 'neovim/nvim-lspconfig', config = [[require('plugins/p-lspconfig')]] } -- config for both lspconfig and lspinstall
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = {'plenary.nvim', 'nvim-lspconfig'},
+    config = [[require('plugins/p-null-ls')]],
+  }
   -- Git Plugins
   use {
     'lewis6991/gitsigns.nvim',

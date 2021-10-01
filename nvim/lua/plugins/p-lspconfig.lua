@@ -35,46 +35,14 @@ local function setup_servers()
   local servers = require'lspinstall'.installed_servers()
   -- Use a loop to conveniently call 'setup' on multiple servers and
   for _, server in pairs(servers) do
-    if server ~= "efm" then
-      -- map buffer local keybindings when the language server attaches
-      require'lspconfig'[server].setup {
-        -- The on_attach hook is used to only activate the bindings after the language server attaches to the current buffer.
-        on_attach = on_attach,
-        flags = {
-          debounce_text_changes = 150,
-        }
+    -- map buffer local keybindings when the language server attaches
+    require'lspconfig'[server].setup {
+      -- The on_attach hook is used to only activate the bindings after the language server attaches to the current buffer.
+      on_attach = on_attach,
+      flags = {
+        debounce_text_changes = 150,
       }
-    else
-      -- Set up efm with eslint
-      local eslint = {
-        lintCommand = "npx eslint -f unix --stdin --stdin-filename ${INPUT}",
-        lintStdin = true,
-        lintFormats = {"%f:%l:%c: %m"},
-        lintIgnoreExitCode = true,
-      }
-      require'lspconfig'[server].setup {
-        on_attach = on_attach,
-        settings = {
-          rootMarkers = {".eslintrc.cjs", ".eslintrc", ".eslintrc.json", ".eslintrc.js"},
-          languages = {
-            javascript = {eslint},
-            javascriptreact = {eslint},
-            ["javascript.jsx"] = {eslint},
-            typescript = {eslint},
-            ["typescript.tsx"] = {eslint},
-            typescriptreact = {eslint}
-          }
-        },
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx",
-          "typescript",
-          "typescript.tsx",
-          "typescriptreact"
-        },
-      }
-    end
+    }
   end
 end
 
