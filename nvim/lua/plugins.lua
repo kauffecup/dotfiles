@@ -22,6 +22,7 @@ require('packer').startup(function ()
     config = [[require('plugins/p-galaxyline')]],
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+  use { 'folke/trouble.nvim', requires = {'nvim-web-devicons'}, config = [[require('plugins/trouble')]] }
   use {
     'hrsh7th/nvim-cmp',
     requires = {
