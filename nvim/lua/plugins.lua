@@ -22,7 +22,17 @@ require('packer').startup(function ()
     config = [[require('plugins/p-galaxyline')]],
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
-  use { 'hrsh7th/nvim-compe', config = [[require('plugins/p-compe')]] }
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/vim-vsnip', -- required for autocompletion to work, even without snippets
+      'onsails/lspkind-nvim',
+    },
+    config = [[require('plugins/nvim-cmp')]],
+  }
   -- Enhancement Plugins
   use { 'prettier/vim-prettier', run = 'npm install', config = [[require('plugins/p-vim-prettier')]] }
   use { 'windwp/nvim-autopairs', config = [[require('plugins/p-autopairs')]]  }

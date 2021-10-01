@@ -26,10 +26,6 @@ local mappings = {
     { "<A-Left>", ":vertical resize -2<CR>", { silent = true } },
     { "<A-Right>", ":vertical resize +2<CR>", { silent = true } },
 
-    -- Move current line / block with Alt-j/k a la vscode.
-    { "<A-j>", ":m .+1<CR>==" },
-    { "<A-k>", ":m .-2<CR>==" },
-
     -- QuickFix
     { "]q", ":cnext<CR>" },
     { "[q", ":cprev<CR>" },
