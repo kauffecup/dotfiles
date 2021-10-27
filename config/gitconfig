@@ -1,9 +1,13 @@
 [user]
-	email = jkaufman@squarespace.com
+	email = jondakauf@gmail.com
 	name = Jonathan Kaufman
 [core]
-	excludesfile = /Users/jkaufman/.gitignore_global
+	excludesfile = /Users/jom/.gitignore_global
   hooksPath = git-hooks
+
+[includeIf "gitdir:/Users/jkaufman/"]
+    path = ~/.sqsp-gitconfig
+
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

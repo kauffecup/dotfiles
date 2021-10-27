@@ -1,5 +1,5 @@
 tap "homebrew/cask"
-tap "AdoptOpenJDK/openjdk"
+# tap "AdoptOpenJDK/openjdk"
 
 # applications
 # TODO mac app store mas things id?
@@ -24,14 +24,14 @@ brew 'imagemagick'
 brew 'ghostscript' # imagemagick dependency
 
 # dev
-cask 'adoptopenjdk/openjdk/adoptopenjdk8'
-cask 'adoptopenjdk11'
+# cask 'adoptopenjdk/openjdk/adoptopenjdk8'
+# cask 'adoptopenjdk11'
 cask 'docker'
 brew 'yarn'
 brew 'go'
 
 # ios
-brew 'swiftlint'
-brew 'rbenv'
-brew 'pyenv'
-brew 'watchman'
+# brew 'swiftlint'
+# brew 'rbenv'
+# brew 'pyenv'
+# brew 'watchman'

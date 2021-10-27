@@ -32,6 +32,7 @@ Need to run PackerInstall first time opening `nvim`
 
 ```sh
 :PackerInstall
+:PackerSync
 ```
 
 #### TSInstall

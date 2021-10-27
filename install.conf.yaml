@@ -11,6 +11,7 @@
     ~/.alacritty.yml: alacritty/alacritty.yml
     ~/Brewfile: brew/Brewfile
     ~/.gitconfig: config/gitconfig
+    ~/.sqsp-gitconfig: config/sqsp-gitconfig
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/nvim:
       path: nvim/*

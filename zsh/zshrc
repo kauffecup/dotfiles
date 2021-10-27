@@ -8,7 +8,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:~/bin:~/squarespace/generated/bin:/usr/local/opt/imagemagick@6/bin
 
 # NVM config
-export NVM_DIR="/Users/jkaufman/.nvm"
+if [ -d '/Users/jkaufman/.nvm' ]; then export NVM_DIR="/Users/jkaufman/.nvm"; fi
+if [ -d '/Users/jom/.nvm' ]; then export NVM_DIR="/Users/jom/.nvm"; fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -27,10 +28,10 @@ export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{.git/*,nod
 # source /usr/local/bin/virtualenvwrapper.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jkaufman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jkaufman/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/jkaufman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jkaufman/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/jkaufman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jkaufman/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/jkaufman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jkaufman/google-cloud-sdk/completion.zsh.inc'; fi
 
 # LASTLY, HERE BE PLUGINS
 # All plugins are installed to these dotfiles as git submodules
