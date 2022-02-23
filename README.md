@@ -20,10 +20,11 @@ This is a requirement for `nvim-web-devicons` to work.
 
 ### eslint_d
 
-This relies on eslint_d, to install:
+This relies on eslint_d and prisma language server, to install:
 
 ```sh
 npm install -g eslint_d
+npm install -g @prisma/language-server
 ```
 
 #### Packer
@@ -44,5 +45,5 @@ Need to run PackerInstall first time opening `nvim`
 #### LspInstall
 
 ```sh
-:LspInstall typescript
+:LspInstall typescript prisma
 ```

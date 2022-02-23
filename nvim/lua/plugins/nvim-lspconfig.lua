@@ -30,26 +30,14 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  -- Use a loop to conveniently call 'setup' on multiple servers and
-  for _, server in pairs(servers) do
-    -- map buffer local keybindings when the language server attaches
-    require'lspconfig'[server].setup {
-      -- The on_attach hook is used to only activate the bindings after the language server attaches to the current buffer.
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+    local opts = {
       on_attach = on_attach,
       flags = {
         debounce_text_changes = 150,
       }
     }
-  end
-end
-
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
+    server:setup(opts)
+end)

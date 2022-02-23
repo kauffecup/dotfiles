@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+tap "planetscale/tap"
 # tap "AdoptOpenJDK/openjdk"
 
 # applications
@@ -22,6 +23,7 @@ brew 'ripgrep'
 brew 'wget'
 brew 'imagemagick'
 brew 'ghostscript' # imagemagick dependency
+brew 'ngrok'
 
 # dev
 # cask 'adoptopenjdk/openjdk/adoptopenjdk8'
@@ -29,6 +31,10 @@ brew 'ghostscript' # imagemagick dependency
 cask 'docker'
 brew 'yarn'
 brew 'go'
+
+# planet scale
+brew 'planetscale/tap/pscale'
+brew 'mysql-client'
 
 # ios
 # brew 'swiftlint'

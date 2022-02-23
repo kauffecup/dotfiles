@@ -1,5 +1,6 @@
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local lspkind = require('lspkind')
 
 cmp.setup {
@@ -23,13 +24,4 @@ cmp.setup {
     { name = 'path' },
   },
 }
-
-require('nvim-autopairs.completion.cmp').setup({
-  map_cr = true,
-  map_complete = true,
-  auto_select = true,
-  map_char = {
-    all = '(',
-    tex = '{'
-  }
-})
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))

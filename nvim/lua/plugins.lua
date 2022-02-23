@@ -41,6 +41,7 @@ require('packer').startup(function ()
   -- Navigation Plugins
   use {
     'nvim-telescope/telescope.nvim',
+    commit = '2c573b9d12f421cec74a215f79b25591fe083352',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     config = [[require('plugins/telescope')]]
   }
@@ -55,8 +56,8 @@ require('packer').startup(function ()
     run = ':TSUpdate',
     config = [[require('plugins/nvim-treesitter')]]
   }
-  use 'kabouzeid/nvim-lspinstall'
   use { 'neovim/nvim-lspconfig', config = [[require('plugins/nvim-lspconfig')]] } -- config for both lspconfig and lspinstall
+  use { 'williamboman/nvim-lsp-installer' }
   use {
     'jose-elias-alvarez/null-ls.nvim',
     requires = {'plenary.nvim', 'nvim-lspconfig'},
