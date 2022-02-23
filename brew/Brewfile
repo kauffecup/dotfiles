@@ -4,8 +4,8 @@ tap "planetscale/tap"
 
 # applications
 # TODO mac app store mas things id?
-cask '1password'
-cask 'cloudapp'
+# cask '1password'
+# cask 'cloudapp'
 cask 'notion'
 cask 'slack'
 cask 'spotify'
@@ -15,22 +15,22 @@ cask 'alacritty'
 brew 'neovim'
 brew 'tmux'
 brew 'zsh'
-brew 'fontforge' # for font patching
+# brew 'fontforge' # for font patching
 
 # programs
 brew 'fzf'
 brew 'ripgrep'
 brew 'wget'
-brew 'imagemagick'
-brew 'ghostscript' # imagemagick dependency
-brew 'ngrok'
+# brew 'imagemagick'
+# brew 'ghostscript' # imagemagick dependency
+# brew 'ngrok'
 
 # dev
 # cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 # cask 'adoptopenjdk11'
 cask 'docker'
 brew 'yarn'
-brew 'go'
+# brew 'go'
 
 # planet scale
 brew 'planetscale/tap/pscale'
