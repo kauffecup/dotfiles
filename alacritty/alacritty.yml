@@ -4,6 +4,18 @@
 # To reference all available configuration, see:
 # https://github.com/alacritty/alacritty/releases/download/v0.6.0/alacritty.yml
 
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
 # Font configuration
 font:
   # Normal (roman) font face
