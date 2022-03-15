@@ -22,6 +22,10 @@ eval "$(pyenv init -)"
 # Use ripgrep as default for fzf
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!{.git/*,node_modules/*,**/.git/*,**/node_modules/*,**/.next/*}'"
 
+# Squarespace
+export PATH=$PATH:~/workspace/kubectl-plugins
+eval "$(jenv init -)"
+
 # Squarespace Docker Env
 # Choose a directory where your different virtual environments will be stored
 # export WORKON_HOME=$HOME/.virtualenvs  # Or another directory of your choice
