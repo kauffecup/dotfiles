@@ -3,7 +3,7 @@ tap "homebrew/cask"
 
 # code / terminal
 # cask 'alacritty'
-# brew 'neovim'
+brew 'neovim'
 # brew 'zsh' # comes with macos?
 # brew 'fontforge' # for font patching
 

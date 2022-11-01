@@ -33,7 +33,13 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### Step 4: Install Operator Mono Nerd Font
+### Step 5: Install Lunar Vim
+
+```
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+```
+
+### Step 6: Install Operator Mono Nerd Font
 
 This setup relies on `OperatorMono Nerd Font` - need to add that to system fonts.
 Its set up by running patching `Operator Mono` via https://github.com/ryanoasis/nerd-fonts#font-patcher.
