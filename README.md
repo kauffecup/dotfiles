@@ -23,7 +23,15 @@ brew bundle # brewfile gets set up from this repo
 
 ### Step 3: Install Kitty
 
+```sh
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+
+### Step 4: Install oh-my-zsh
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 ### Step 4: Install Operator Mono Nerd Font
 

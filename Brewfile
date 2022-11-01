@@ -2,8 +2,8 @@ tap "homebrew/cask"
 # tap "planetscale/tap"
 
 # code / terminal
-cask 'alacritty'
-brew 'neovim'
+# cask 'alacritty'
+# brew 'neovim'
 # brew 'zsh' # comes with macos?
 # brew 'fontforge' # for font patching
 
