@@ -1,16 +1,6 @@
 [user]
-	email = jondakauf@gmail.com
 	name = Jonathan Kaufman
-[core]
-	excludesfile = /Users/jom/.gitignore_global
-  hooksPath = git-hooks
-
-[includeIf "gitdir:/Users/jkaufman/"]
-    path = ~/.sqsp-gitconfig
-
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	email = jkaufman@figma.com
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
