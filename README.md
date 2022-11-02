@@ -40,6 +40,12 @@ zinit self-update
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
+### Step 6: Install eslint_d
+
+```
+npm install -g eslint_d
+```
+
 ### Step 6: Install Operator Mono Nerd Font
 
 This setup relies on `OperatorMono Nerd Font` - need to add that to system fonts.
