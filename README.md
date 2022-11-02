@@ -27,10 +27,11 @@ brew bundle # brewfile gets set up from this repo
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
-### Step 4: Install oh-my-zsh
+### Step 4: Install Zinit
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+zinit self-update
 ```
 
 ### Step 5: Install Lunar Vim
