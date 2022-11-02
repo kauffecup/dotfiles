@@ -13,12 +13,6 @@ alias vi=lvim
 # Preferred editor for local and remote sessions
 export EDITOR="lvim"
 
-# NVM config
-# if [ -d '/Users/jkaufman/.nvm' ]; then export NVM_DIR="/Users/jkaufman/.nvm"; fi
-# if [ -d '/Users/jom/.nvm' ]; then export NVM_DIR="/Users/jom/.nvm"; fi
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # junegunn/fzf, fuzzy finder
 # # Use fd instead of find for speed
 export FZF_DEFAULT_COMMAND='fd --type f --hidden -E .git'
@@ -46,6 +40,17 @@ zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+# hist env vars
+HISTFILE=~/.zsh_history # Where to save history to disk
+HISTDUP=erase # Erase duplicates in the history file
+setopt hist_ignore_dups # Ignore duplicates
+setopt append_history # Append history to the history file (no overwriting)
+setopt share_history # Share history across terminals
+setopt inc_append_history # Immediately append to the history file, not just when a term is killed
+zinit light zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Figma
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
