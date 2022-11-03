@@ -86,6 +86,9 @@ lvim.builtin.telescope.pickers.lsp_references.theme = nil
 lvim.builtin.telescope.pickers.lsp_definitions.theme = nil
 lvim.builtin.telescope.pickers.lsp_declarations.theme = nil
 lvim.builtin.telescope.pickers.lsp_implementations.theme = nil
+-- Add additional shortcut for buffer search (also exists via <leader>bf)
+lvim.builtin.which_key.mappings["s"]["b"] = { "<cmd>Telescope buffers<cr>", "Buffers" }
+
 -- Simpler launch screen
 lvim.builtin.alpha.dashboard.section.header.val = ""
 
