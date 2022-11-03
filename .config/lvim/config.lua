@@ -78,6 +78,14 @@ linters.setup {
   }
 }
 
+-- Plugin Configuration
+lvim.builtin.telescope.pickers.live_grep.theme = nil
+lvim.builtin.telescope.pickers.grep_string.theme = nil
+lvim.builtin.telescope.pickers.lsp_references.theme = nil
+lvim.builtin.telescope.pickers.lsp_definitions.theme = nil
+lvim.builtin.telescope.pickers.lsp_declarations.theme = nil
+lvim.builtin.telescope.pickers.lsp_implementations.theme = nil
+
 -- Additional Plugins
 lvim.plugins = {
   {
