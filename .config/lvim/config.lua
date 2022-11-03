@@ -79,12 +79,16 @@ linters.setup {
 }
 
 -- Plugin Configuration
+-- Use default theme for these telescope pikers
 lvim.builtin.telescope.pickers.live_grep.theme = nil
 lvim.builtin.telescope.pickers.grep_string.theme = nil
 lvim.builtin.telescope.pickers.lsp_references.theme = nil
 lvim.builtin.telescope.pickers.lsp_definitions.theme = nil
 lvim.builtin.telescope.pickers.lsp_declarations.theme = nil
 lvim.builtin.telescope.pickers.lsp_implementations.theme = nil
+-- Simpler launch screen
+lvim.builtin.alpha.dashboard.section.header.val = ""
+
 
 -- Additional Plugins
 lvim.plugins = {
