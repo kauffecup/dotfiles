@@ -5,7 +5,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 export PATH=/usr/local/bin:$PATH
 
 # Add local binaries to path (needed for lunarvim)
-export PATH=/Users/jkaufman/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 alias nvim=lvim
 alias vim=lvim
 alias vi=lvim

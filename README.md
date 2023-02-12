@@ -11,6 +11,7 @@ cd ~
 git clone --bare git@github.com:kauffecup/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME' # this is also in .zshrc
 dotfiles config --local status.showUntrackedFiles no
+dotifles checkout
 ```
 
 ### Step 2: Install homebrew and then deps
