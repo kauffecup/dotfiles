@@ -1,6 +1,6 @@
 [user]
 	name = Jonathan Kaufman
-	email = jkaufman@figma.com
+  email = jondakauf@gmail.com
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
@@ -26,3 +26,6 @@
   cmd = nvim -d $LOCAL $MERGED $BASE $REMOTE -c 'wincmd w' -c 'wincmd J'
 [push]
 	default = current
+
+[includeIf "gitdir:~/figma"]
+  path = ~/.figma.gitconfig

@@ -57,13 +57,15 @@ zinit light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Figma
-export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
-export GOPATH="$HOME/go"
-export PATH="$HOME/go/bin:$PATH"
-eval "$(rbenv init -)"
-export RACK_ENV=development
-export PATH="$HOME/.cargo/bin:$PATH"
-export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+# Figma specific config
+if [[ -d /Users/jkaufman ]]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export GOPATH="$HOME/go"
+  export PATH="$HOME/go/bin:$PATH"
+  eval "$(rbenv init -)"
+  export RACK_ENV=development
+  export PATH="$HOME/.cargo/bin:$PATH"
+  export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+fi
