@@ -27,5 +27,5 @@
 [push]
   default = current
 
-[includeIf "gitdir:~/figma"]
+[includeIf "gitdir:~/figma/"]
   path = ~/.figma.gitconfig
