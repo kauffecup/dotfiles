@@ -22,26 +22,20 @@ cd ~
 brew bundle # brewfile gets set up from this repo
 ```
 
-### Step 3: Install Kitty
-
-```sh
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-```
-
-### Step 4: Install Zinit
+### Step 3: Install Zinit
 
 ```
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 zinit self-update
 ```
 
-### Step 5: Install Lunar Vim
+### Step 4: Install Lunar Vim
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
-### Step 6: Install eslint_d
+### Step 5: Install eslint_d
 
 ```
 npm install -g eslint_d

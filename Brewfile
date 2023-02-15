@@ -1,18 +1,13 @@
-tap "homebrew/cask"
-# tap "planetscale/tap"
+tap 'homebrew/cask'
 
 # code / terminal
-# cask 'alacritty'
+cask 'alacritty'
+brew 'tmux'
 brew 'neovim'
-# brew 'zsh' # comes with macos?
-# brew 'fontforge' # for font patching
 
 # programs
 brew 'fzf'
 brew 'ripgrep'
-# brew 'imagemagick'
-# brew 'ghostscript' # imagemagick dependency
-# brew 'ngrok'
 
 # dev
 # cask 'adoptopenjdk/openjdk/adoptopenjdk8'
@@ -22,5 +17,6 @@ brew 'ripgrep'
 # brew 'go'
 
 # planet scale
+# tap "planetscale/tap"
 # brew 'planetscale/tap/pscale'
 # brew 'mysql-client'
