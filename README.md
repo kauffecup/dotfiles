@@ -41,8 +41,8 @@ bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/
 npm install -g eslint_d
 ```
 
-### Step 6: Install Operator Mono Nerd Font
+### Step 6: Install Hack Nerd Font
 
-This setup relies on `OperatorMono Nerd Font` - need to add that to system fonts.
-Its set up by running patching `Operator Mono` via https://github.com/ryanoasis/nerd-fonts#font-patcher.
-This is a requirement for `nvim-web-devicons` to work.
+This setup relies on `Hack Nerd Font` - need to add that to system fonts.
+It is checked into this repo under the `misc/` directory.
+For more info on nerd fonts, see: https://github.com/ryanoasis/nerd-fonts.

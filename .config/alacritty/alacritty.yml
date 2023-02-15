@@ -2,21 +2,26 @@
 font:
   # Normal (roman) font face
   normal:
-    family: OperatorMono Nerd Font
-    style: Book
+    family: Hack Nerd Font
+    style: Regular
 
   # Bold font face
   bold:
-    family: OperatorMono Nerd Font
-    style: Medium
+    family: Hack Nerd Font
+    style: Bold
 
   # Italic font face
   italic:
-    family: OperatorMono Nerd Font
-    style: Book Italic
+    family: Hack Nerd Font
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: Hack Nerd Font
+    style: Bold Italic
 
   # Point size
-  size: 17.0
+  size: 16.0
 
 
 # TokyoNight Alacritty Colors
