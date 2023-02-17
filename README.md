@@ -35,6 +35,12 @@ zinit self-update
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
+#### Step 4a: More Lunar Vim Setup
+
+```
+:Copilot auth
+```
+
 ### Step 5: Install eslint_d
 
 ```
