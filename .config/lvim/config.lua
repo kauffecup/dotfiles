@@ -17,19 +17,19 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "cpp",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "cpp",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -38,32 +38,32 @@ lvim.builtin.treesitter.highlight.enable = true
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "clang-format", filetypes = { "cpp" } },
-  {
-    command = "prettier",
-    filetypes = {
-      "javascriptreact",
-      "javascript",
-      "typescript",
-      "typescriptreact",
-      "css",
-      "ruby"
-    }
-  },
+    { command = "clang-format", filetypes = { "cpp" } },
+    {
+        command = "prettier",
+        filetypes = {
+            "javascriptreact",
+            "javascript",
+            "typescript",
+            "typescriptreact",
+            "css",
+            "ruby"
+        }
+    },
 }
 
 -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  {
-    command = "eslint_d",
-    filetypes = {
-      "javascriptreact",
-      "javascript",
-      "typescript",
-      "typescriptreact"
+    {
+        command = "eslint_d",
+        filetypes = {
+            "javascriptreact",
+            "javascript",
+            "typescript",
+            "typescriptreact"
+        }
     }
-  }
 }
 
 -- Plugin Configuration
@@ -80,50 +80,40 @@ lvim.builtin.alpha.dashboard.section.header.val = ""
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
-    dependencies = { "zbirenbaum/copilot.lua" },
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup({
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-        }) -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
-        require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
-      end, 100)
-    end,
-  },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({
-  --       suggestion = { enabled = false },
-  --       panel = { enabled = false },
-  --     })
-  --   end,
-  -- },
-  -- {
-  --   "zbirenbaum/copilot-cmp",
-  --   after = { "copilot.lua" },
-  --   config = function()
-  --     require("copilot_cmp").setup()
-  --   end
-  -- },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
+    { "zbirenbaum/copilot.lua" },
+    {
+        "zbirenbaum/copilot-cmp",
+        event = "InsertEnter",
+        dependencies = { "zbirenbaum/copilot.lua" },
+        config = function()
+          vim.defer_fn(function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            }) -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+            require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+          end, 100)
+        end,
+    },
+    -- {
+    --   "zbirenbaum/copilot-cmp",
+    --   after = { "copilot.lua" },
+    --   config = function()
+    --     require("copilot_cmp").setup()
+    --   end
+    -- },
+    {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+    },
 }
 
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+    name = "+Trouble",
+    r = { "<cmd>Trouble lsp_references<cr>", "References" },
+    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+    d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
