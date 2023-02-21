@@ -1,2 +1,4 @@
 [user]
   email = jkaufman@figma.com
+[alias]
+  purge = "!git delete-merged-branches"

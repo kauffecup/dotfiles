@@ -68,4 +68,5 @@ if [[ -d /Users/jkaufman ]]; then
   export RACK_ENV=development
   export PATH="$HOME/.cargo/bin:$PATH"
   export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+  export PATH="/Users/jkaufman/figma/figma:$PATH"
 fi
