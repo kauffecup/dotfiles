@@ -52,6 +52,7 @@ formatters.setup {
     },
 }
 
+-- set clangd formatter to use utf-16 to avoid multiple encoding warning
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
 local capabilities = require("lvim.lsp").common_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
@@ -83,6 +84,9 @@ lvim.builtin.which_key.mappings["s"]["T"] = { "<cmd>Telescope grep_string<cr>", 
 
 -- Simpler launch screen
 lvim.builtin.alpha.dashboard.section.header.val = ""
+
+-- Better project management for figma monorepo
+lvim.builtin.project.exclude_dirs = { "~/figma/figma/*" }
 
 -- Additional Plugins
 lvim.plugins = {
