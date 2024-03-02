@@ -10,6 +10,7 @@ brew 'fzf'
 brew 'ripgrep'
 
 # dev
+brew 'python@3.11'
 # cask 'adoptopenjdk/openjdk/adoptopenjdk8'
 # cask 'adoptopenjdk11'
 # cask 'docker'
