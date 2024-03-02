@@ -4,6 +4,9 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # Add homebrew installations to path
 export PATH=/usr/local/bin:$PATH
 
+# Give homebrew python precedence over system python
+export PATH=/opt/homebrew/bin/python3:$PATH
+
 # Add local binaries to path (needed for lunarvim)
 export PATH=~/.local/bin:$PATH
 alias nvim=lvim
