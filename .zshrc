@@ -7,14 +7,10 @@ export PATH=/usr/local/bin:$PATH
 # Give homebrew python precedence over system python
 export PATH=/opt/homebrew/bin/python3:$PATH
 
-# Add local binaries to path (needed for lunarvim)
-export PATH=~/.local/bin:$PATH
-alias nvim=lvim
-alias vim=lvim
-alias vi=lvim
-
 # Preferred editor for local and remote sessions
-export EDITOR="lvim"
+export EDITOR="nvim"
+alias vim=nvim
+alias vi=nvim
 
 # junegunn/fzf, fuzzy finder
 # # Use fd instead of find for speed
