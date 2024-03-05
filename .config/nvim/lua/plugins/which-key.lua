@@ -8,6 +8,7 @@ which_key.register({
     name = "Search",
     f = { "<cmd>Telescope find_files<CR>", "Find File" },
     t = { "<cmd>Telescope live_grep<CR>", "Text" },
+    T = { "<cmd>Telescope grep_string<CR>", "String" },
     r = { "<cmd>Telescope oldfiles<CR>", "Open Recent File" },
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
     R = { "<cmd>Telescope registers<CR>", "Registers" },

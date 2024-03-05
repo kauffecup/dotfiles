@@ -17,12 +17,23 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-        require('plugins/tokyonight')
+      vim.cmd[[colorscheme tokyonight]]
     end,
   },
   {
     "nvim-tree/nvim-web-devicons",
     lazy = true,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require("plugins/lualine")
+    end,
+    event = "VimEnter",
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
   },
 
   {
@@ -43,6 +54,8 @@ require("lazy").setup({
     lazy = true,
     cmd = "Telescope",
   },
+  { "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -71,11 +84,10 @@ require("lazy").setup({
     event = "User FileOpened",
   },
 
-  -- LSP
   {
     "neovim/nvim-lspconfig",
     lazy = true,
-    dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim" },
+    dependencies = { "mason-lspconfig.nvim" },
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -87,7 +99,7 @@ require("lazy").setup({
   {
     "williamboman/mason.nvim",
     config = function()
-      require("plugins/mason")
+      require("lsp")
     end,
     cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     build = function()
@@ -98,9 +110,35 @@ require("lazy").setup({
     event = "User FileOpened",
     lazy = true,
   },
+  { "nvimtools/none-ls.nvim", lazy = true },
 
-  -- Dependencies
-  { "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugins/nvim-cmp")
+    end,
+    event = { "InsertEnter", "CmdlineEnter" },
+    dependencies = { "cmp-nvim-lsp", "cmp-buffer", "cmp-path", "cmp_luasnip" },
+  },
+  { "hrsh7th/cmp-nvim-lsp", lazy = true },
+  { "hrsh7th/cmp-buffer", lazy = true },
+  { "hrsh7th/cmp-path", lazy = true },
+  { "saadparwaiz1/cmp_luasnip", lazy = true },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip.loaders.from_lua").lazy_load()
+    end,
+    event = "InsertEnter",
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    config = function()
+      require("plugins/copilot")
+    end,
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
 })
 
