@@ -3,7 +3,7 @@ local which_key = require "which-key"
 which_key.setup({})
 
 which_key.register({
-  e = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+  e = { "<cmd>NvimTreeFindFile<CR>", "Explorer" },
   s = {
     name = "Search",
     f = { "<cmd>Telescope find_files<CR>", "Find File" },

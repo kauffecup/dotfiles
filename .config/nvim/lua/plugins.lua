@@ -98,9 +98,6 @@ require("lazy").setup({
   },
   {
     "williamboman/mason.nvim",
-    config = function()
-      require("lsp")
-    end,
     cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     build = function()
       pcall(function()
