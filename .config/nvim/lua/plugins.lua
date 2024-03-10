@@ -32,6 +32,14 @@ require("lazy").setup({
     event = "VimEnter",
   },
   {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("plugins/bufferline")
+    end,
+    branch = "main",
+    event = "User FileOpened",
+  },
+  {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
@@ -145,5 +153,19 @@ require("lazy").setup({
     end,
     event = "User FileOpened",
     cmd = "Gitsigns",
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("plugins/comment")
+    end,
+    keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+    event = "User FileOpened",
+  },
+  {
+    -- Lazy loaded by Comment.nvim pre_hook
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    lazy = true,
   },
 })
