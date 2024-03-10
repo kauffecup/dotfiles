@@ -17,7 +17,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd[[colorscheme tokyonight]]
+      vim.cmd [[colorscheme tokyonight]]
     end,
   },
   {
@@ -54,8 +54,8 @@ require("lazy").setup({
     lazy = true,
     cmd = "Telescope",
   },
-  { "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+  { "nvim-lua/plenary.nvim",                    cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make",                                          lazy = true },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -107,7 +107,7 @@ require("lazy").setup({
     event = "User FileOpened",
     lazy = true,
   },
-  { "nvimtools/none-ls.nvim", lazy = true },
+  { "nvimtools/none-ls.nvim",   lazy = true },
 
   {
     "hrsh7th/nvim-cmp",
@@ -117,9 +117,9 @@ require("lazy").setup({
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = { "cmp-nvim-lsp", "cmp-buffer", "cmp-path", "cmp_luasnip" },
   },
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "hrsh7th/cmp-buffer", lazy = true },
-  { "hrsh7th/cmp-path", lazy = true },
+  { "hrsh7th/cmp-nvim-lsp",     lazy = true },
+  { "hrsh7th/cmp-buffer",       lazy = true },
+  { "hrsh7th/cmp-path",         lazy = true },
   { "saadparwaiz1/cmp_luasnip", lazy = true },
   {
     "L3MON4D3/LuaSnip",
@@ -137,5 +137,13 @@ require("lazy").setup({
     cmd = "Copilot",
     event = "InsertEnter",
   },
-})
 
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("plugins/gitsigns")
+    end,
+    event = "User FileOpened",
+    cmd = "Gitsigns",
+  },
+})

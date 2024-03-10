@@ -29,7 +29,6 @@ require("lspconfig").cssls.setup(defaults)
 require("lspconfig").gopls.setup(defaults)
 require("lspconfig").jsonls.setup(defaults)
 require("lspconfig").lemminx.setup(defaults)
-require("lspconfig").lua_ls.setup(defaults)
 require("lspconfig").solargraph.setup(defaults)
 require("lspconfig").svls.setup(defaults)
 require("lspconfig").tailwindcss.setup(defaults)
@@ -45,6 +44,20 @@ require("lspconfig").eslint.setup({
       command = "EslintFixAll",
     })
   end,
+})
+
+require("lspconfig").lua_ls.setup({
+  capabilities = defaults.capabilities,
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
 })
 
 local null_ls = require("null-ls")
