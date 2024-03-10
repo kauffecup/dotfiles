@@ -1,4 +1,4 @@
-local which_key = require "which-key"
+local which_key = require("which-key")
 
 which_key.setup({
   -- add operators that will trigger motion and text object completion
@@ -10,19 +10,19 @@ which_key.setup({
     group = " ",
   },
   window = {
-    border = "single",        -- none, single, double, shadow
-    position = "bottom",      -- bottom, top
-    margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]
+    border = "single", -- none, single, double, shadow
+    position = "bottom", -- bottom, top
+    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
     winblend = 0,
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
     width = { min = 20, max = 50 }, -- min and max width of the columns
-    spacing = 3,                    -- spacing between columns
-    align = "left",                 -- align columns left, center or right
+    spacing = 3, -- spacing between columns
+    align = "left", -- align columns left, center or right
   },
-  ignore_missing = true,            -- enable this to hide mappings for which you didn't specify a label
+  ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 })
 
 which_key.register({
@@ -105,14 +105,14 @@ which_key.register({
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
-  }
+  },
 }, {
-  mode = "n",     -- NORMAL mode
+  mode = "n", -- NORMAL mode
   prefix = "<leader>",
-  buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true,  -- use `silent` when creating keymaps
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
-  nowait = true,  -- use `nowait` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
 })
 
 which_key.register({
@@ -122,10 +122,10 @@ which_key.register({
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
   },
 }, {
-  mode = "v",     -- VISUAL mode
+  mode = "v", -- VISUAL mode
   prefix = "<leader>",
-  buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true,  -- use `silent` when creating keymaps
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
-  nowait = true,  -- use `nowait` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
 })

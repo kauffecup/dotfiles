@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 end
 
 local defaults = {
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 
 require("lspconfig").bashls.setup(defaults)
@@ -72,27 +72,27 @@ null_ls.setup({
   on_attach = on_attach,
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
     local bufopts = function(desc)
       return { buffer = ev.buf, desc = desc }
     end
 
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts('Go to Declaration'))
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts('Go to Definition'))
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts('Hover'))
-    vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, bufopts('Go to Implementation'))
-    vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, bufopts('Singature Help'))
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts('Type Definition'))
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts('Rename with LSP'))
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, bufopts('Code Action'))
-    vim.keymap.set('n', 'gR', vim.lsp.buf.references, bufopts('Go to Reference'))
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts("Go to Declaration"))
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts("Go to Definition"))
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts("Hover"))
+    vim.keymap.set("n", "gI", vim.lsp.buf.implementation, bufopts("Go to Implementation"))
+    vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, bufopts("Singature Help"))
+    vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts("Type Definition"))
+    vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts("Rename with LSP"))
+    vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, bufopts("Code Action"))
+    vim.keymap.set("n", "gR", vim.lsp.buf.references, bufopts("Go to Reference"))
   end,
 })
 
-local signs = { Error = '', Warn = '', Hint = '󰌶', Info = '' }
+local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "" }
 for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
+  local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end

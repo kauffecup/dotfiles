@@ -6,9 +6,7 @@ local function diagnostics_indicator(num, _, diagnostics, _)
     info = "",
   }
   for name, count in pairs(diagnostics) do
-    if symbols[name] and count > 0 then
-      table.insert(result, symbols[name] .. " " .. count)
-    end
+    if symbols[name] and count > 0 then table.insert(result, symbols[name] .. " " .. count) end
   end
   result = table.concat(result, " ")
   return #result > 0 and result or ""
@@ -31,10 +29,10 @@ require("bufferline").setup({
     right_trunc_marker = "",
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-    truncate_names = true,  -- whether or not tab names should be truncated
+    truncate_names = true, -- whether or not tab names should be truncated
     tab_size = 18,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     diagnostics_indicator = diagnostics_indicator,
-  }
+  },
 })

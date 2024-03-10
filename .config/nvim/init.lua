@@ -1,5 +1,5 @@
-require 'settings'
-require 'keybindings'
-require 'autocmds'
-require 'plugins'
-require 'lsp'
+require("settings")
+require("keybindings")
+require("autocmds")
+require("plugins")
+require("lsp")

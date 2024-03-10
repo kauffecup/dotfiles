@@ -4,10 +4,10 @@
 --
 
 -- File encoding
-if vim.fn.has('vim_starting') then
-  vim.o.encoding = 'utf-8'
-  vim.o.fileencoding = 'utf-8'
-  vim.o.fileencodings = 'utf-8'
+if vim.fn.has("vim_starting") then
+  vim.o.encoding = "utf-8"
+  vim.o.fileencoding = "utf-8"
+  vim.o.fileencodings = "utf-8"
 end
 
 -- ============================================================================
@@ -25,13 +25,13 @@ vim.o.wrap = false
 -- Disable line/column number in status line
 vim.o.ruler = false
 -- Yank and paste with the system clipboard
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = "unnamedplus"
 -- Only one line for command line
 vim.o.cmdheight = 1
 -- so that `` is visible in markdown files
 vim.o.conceallevel = 0
 -- treesitter based folding
-vim.o.foldmethod = 'expr'
+vim.o.foldmethod = "expr"
 -- required to keep multiple buffers and open multiple buffers
 vim.o.hidden = true
 -- highlight all matches on previous search pattern
@@ -46,13 +46,13 @@ vim.o.splitright = true
 -- ============================================================================
 
 -- Enable mouse for all modes
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 -- Enable syntax highlighting
-vim.cmd('syntax on')
+vim.cmd("syntax on")
 -- Enable true color support
 vim.o.termguicolors = true
 -- Enable line numbers
-vim.cmd('set number')
+vim.cmd("set number")
 -- pop up menu height
 vim.o.pumheight = 10
 -- we dont need to see things like -- INSERT -- anymore
@@ -64,7 +64,7 @@ vim.o.number = true
 -- set number column width to 2 {default 4}
 vim.o.numberwidth = 2
 -- always show the sign column, otherwise it would shift the text each time
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 -- minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 8
 -- minimal number of screen lines to keep left and right of the cursor.
@@ -79,7 +79,7 @@ vim.o.ignorecase = true
 -- if the search string has an upper case letter in it, the search will be case sensitive
 vim.o.smartcase = true
 -- Automatically re-read file if a change was detected outside of vim
-vim.cmd('set autoread')
+vim.cmd("set autoread")
 -- creates a swap file
 vim.o.swapfile = false
 -- time to wait for a mapped sequence to complete (in milliseconds)
