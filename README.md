@@ -29,16 +29,18 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 zinit self-update
 ```
 
-### Step 4: Install Lunar Vim
-
-```
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-```
-
-#### Step 4a: More Lunar Vim Setup
+### Step 4: NeoVim setup
 
 ```
 :Copilot auth
+```
+
+```
+:TSUpdate
+```
+
+```
+:Mason
 ```
 
 ### Step 5: Install eslint_d
