@@ -154,6 +154,14 @@ require("lazy").setup({
     event = "User FileOpened",
     cmd = "Gitsigns",
   },
+  {
+    "sindrets/diffview.nvim",
+    config = function()
+      require("plugins/diffview")
+    end,
+    event = "User FileOpened",
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+  },
 
   {
     "numToStr/Comment.nvim",

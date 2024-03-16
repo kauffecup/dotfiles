@@ -1,3 +1,6 @@
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
+
 require("telescope").setup({
   defaults = {
     vimgrep_arguments = {
@@ -31,6 +34,42 @@ require("telescope").setup({
     },
     colorscheme = {
       enable_preview = true,
+    },
+    git_commits = {
+      mappings = {
+        i = {
+          ["<CR>"] = function() -- show diffview for the selected commit
+            local entry = action_state.get_selected_entry()
+            -- close Telescope window properly prior to switching windows
+            actions.close(vim.api.nvim_get_current_buf())
+            vim.cmd(("DiffviewOpen %s^!"):format(entry.value))
+          end,
+        },
+      },
+    },
+    git_bcommits = {
+      mappings = {
+        i = {
+          ["<CR>"] = function() -- show diffview for the selected commit of current buffer
+            local entry = action_state.get_selected_entry()
+            -- close Telescope window properly prior to switching windows
+            actions.close(vim.api.nvim_get_current_buf())
+            vim.cmd(("DiffviewOpen %s^!"):format(entry.value))
+          end,
+        },
+      },
+    },
+    git_branches = {
+      mappings = {
+        i = {
+          ["<CR>"] = function() -- show diffview comparing the selected branch with the current branch
+            local entry = action_state.get_selected_entry()
+            -- close Telescope window properly prior to switching windows
+            actions.close(vim.api.nvim_get_current_buf())
+            vim.cmd(("DiffviewOpen %s.."):format(entry.value))
+          end,
+        },
+      },
     },
   },
   extensions = {
