@@ -1,3 +1,9 @@
--- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+
+-- local map = vim.keymap.set
+
+-- Better window movement
+-- map("n", "<C-h>", "<C-w>h", { silent = true })
+-- map("n", "<C-j>", "<C-w>j", { silent = true })
+-- map("n", "<C-k>", "<C-w>k", { silent = true })
+-- map("n", "<C-l>", "<C-w>l", { silent = true })
