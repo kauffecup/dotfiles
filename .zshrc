@@ -68,4 +68,13 @@ if [[ -d /Users/jkaufman ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
   export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
   export PATH="/Users/jkaufman/figma/figma:$PATH"
+
+  alias intellisymbols="bazel run //fullscreen:refresh_compile_commands && bazel build //fullscreen:vscode_refs --config=debug"
+
+  eval "$(rbenv init -)"
+  export RACK_ENV=development
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+  export FIGMA_SSO_ROLES_FILE="$HOME/figma/figma/config/aws/sso_roles.yaml"
 fi
