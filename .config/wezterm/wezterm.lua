@@ -10,9 +10,6 @@ require("keys").setup(config)
 -- Colorscheme
 config.color_scheme = "Catppuccin Macchiato"
 
--- Window decorations
-config.window_decorations = "RESIZE"
-
 -- Fonts
 config.font = wezterm.font({ family = "BerkeleyMono Nerd Font" })
 config.font_size = 16
