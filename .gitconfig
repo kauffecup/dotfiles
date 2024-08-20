@@ -26,6 +26,8 @@
   cmd = nvim -d $LOCAL $MERGED $BASE $REMOTE -c 'wincmd w' -c 'wincmd J'
 [push]
   default = current
+[index]
+  version = 4
 
 [includeIf "gitdir:~/figma/"]
   path = ~/.figma.gitconfig

@@ -2,3 +2,8 @@
   email = jkaufman@figma.com
 [alias]
   purge = "!git delete-merged-branches"
+[feature]
+  manyFiles = true
+[core]
+  untrackedCache = true
+  fsmonitor = true
