@@ -38,7 +38,7 @@ return {
         { action = 'lua LazyVim.pick("live_grep")()',                desc = " Find Text",       icon = " ", key = "g" },
         { action = 'lua LazyVim.pick.config_files()()',              desc = " Config",          icon = " ", key = "c" },
         { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },
-        { action = "Oil",                                            desc = " File Explorer",   icon = " ", key = "-" },
+        { action = "lua require(\"mini.files\").open()",             desc = " File Explorer",   icon = " ", key = "e" },
         { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
       }
 
@@ -50,57 +50,28 @@ return {
   },
 
   {
-    "stevearc/oil.nvim",
-    cmd = "Oil",
-    opts = {
-      default_file_explorer = true,
-      delete_to_trash = true,
-      skip_confirm_for_simple_edits = true,
-      view_options = {
-        show_hidden = true,
-        natural_order = true,
-        is_always_hidden = function(path)
-          return path == ".." or path == ".git"
-        end,
-      },
-      window_options = {
-        wrap = true,
-      },
-      -- remap keys so we can have consistency for splits and pane navigation
-      use_default_keymaps = false,
-      keymaps = {
-        ["g?"] = "actions.show_help",
-        ["<CR>"] = "actions.select",
-        ["<leader>|"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-        ["<leader>-"] = {
-          "actions.select",
-          opts = { horizontal = true },
-          desc = "Open the entry in a horizontal split",
-        },
-        ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
-        ["<C-p>"] = "actions.preview",
-        ["q"] = "actions.close",
-        ["<C-r>"] = "actions.refresh",
-        ["-"] = "actions.parent",
-        ["_"] = "actions.open_cwd",
-        ["`"] = "actions.cd",
-        ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
-        ["gs"] = "actions.change_sort",
-        ["gx"] = "actions.open_external",
-        ["g."] = "actions.toggle_hidden",
-        ["g\\"] = "actions.toggle_trash",
-      },
+    "echasnovski/mini.files",
+    options = {
+      use_as_default_explorer = true,
     },
     keys = {
+      { "<leader>fm", false },
       {
-        "-",
+        "<leader>e",
         function()
-          require("oil").open()
+          require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
         end,
-        desc = "File explorer",
+        desc = "Open mini.files (Directory of Current File)",
+      },
+      { "<leader>fM", false },
+      {
+        "<leader>E",
+        function()
+          require("mini.files").open(vim.uv.cwd(), true)
+        end,
+        desc = "Open mini.files (cwd)",
       },
     },
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
   },
 
   -- exclude
