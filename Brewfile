@@ -3,6 +3,7 @@ tap 'homebrew/cask'
 # code / terminal
 brew 'neovim'
 cask 'wezterm'
+brew 'lazygit'
 
 # programs
 brew 'fzf'
