@@ -74,7 +74,25 @@ return {
     },
   },
 
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = "<c-l>",
+          next = "<c-j>",
+          prev = "<c-k>",
+          dismiss = "<c-h>",
+        },
+      },
+    },
+  },
+
   -- exclude
+  { "zbirenbaum/copilot-cmp", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "rcarriga/nvim-notify", enabled = false },
