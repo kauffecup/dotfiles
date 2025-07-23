@@ -8,7 +8,7 @@ Based off of https://www.atlassian.com/git/tutorials/dotfiles
 
 ```sh
 cd ~
-git clone --bare git@github.com:kauffecup/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:kauffecup/dotfiles.git $HOME/.dotfiles # TODO this needs to account for submodules
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME' # this is also in .zshrc
 dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout
