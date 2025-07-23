@@ -22,31 +22,31 @@ return {
   },
 
   {
-    "nvimdev/dashboard-nvim",
-    opts = function(_, opts)
-      -- omit logo
-      local logo = [[]]
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-      opts.config.header = vim.split(logo, "\n")
-
-      -- remove session and extras
-      -- stylua: ignore
-      opts.config.center = {
-        { action = 'lua LazyVim.pick()()',                           desc = " Find File",       icon = " ", key = "f" },
-        { action = "ene | startinsert",                              desc = " New File",        icon = " ", key = "n" },
-        { action = 'lua LazyVim.pick("oldfiles")()',                 desc = " Recent Files",    icon = " ", key = "r" },
-        { action = 'lua LazyVim.pick("live_grep")()',                desc = " Find Text",       icon = " ", key = "g" },
-        { action = 'lua LazyVim.pick.config_files()()',              desc = " Config",          icon = " ", key = "c" },
-        { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },
-        { action = "lua require(\"mini.files\").open()",             desc = " File Explorer",   icon = " ", key = "e" },
-        { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
-      }
-
-      for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
-        button.key_format = "  %s"
-      end
-    end,
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = [[]],
+          ---@type snacks.dashboard.Item[]
+          keys = {
+            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+            { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            {
+              icon = " ",
+              key = "c",
+              desc = "Config",
+              action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+            },
+            { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+            { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
+            { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+            { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+          },
+        },
+      },
+    },
   },
 
   {
