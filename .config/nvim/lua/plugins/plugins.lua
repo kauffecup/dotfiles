@@ -91,6 +91,24 @@ return {
     },
   },
 
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        vtsls = {
+          settings = {
+            typescript = {
+              tsserver = {
+                nodePath = "node",
+                maxTsServerMemory = 8192,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
   -- exclude
   { "zbirenbaum/copilot-cmp", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
