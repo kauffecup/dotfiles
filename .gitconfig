@@ -31,3 +31,9 @@
 
 [includeIf "gitdir:~/figma/"]
   path = ~/.figma.gitconfig
+[core]
+	excludesfile = /Users/jkaufman/.gitignore_global
+	multipleGitDir = false
+  editor = nvim
+[fetch]
+	parallel = 1

@@ -7,3 +7,8 @@
 [core]
   untrackedCache = true
   fsmonitor = true
+[remote "origin"]
+  url = git@github.com:figma/figma.git
+  fetch = +refs/heads/master:refs/remotes/origin/master
+  fetch = +refs/heads/release-*:refs/remotes/origin/release-*
+  fetch = +refs/heads/jkaufman/*:refs/remotes/origin/jkaufman/*

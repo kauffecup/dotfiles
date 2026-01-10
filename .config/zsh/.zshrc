@@ -18,6 +18,9 @@ export EDITOR="nvim"
 alias vim=nvim
 alias vi=nvim
 
+# List claude plans with tilde paths
+alias lsc='ls -d ~/claude-plans/* | sed "s|$HOME|~|"'
+
 # Figma specific config
 if [[ -d /Users/jkaufman ]]; then
   export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
@@ -39,6 +42,8 @@ if [[ -d /Users/jkaufman ]]; then
   export FIGMA_SSO_ROLES_FILE="$HOME/figma/figma/config/aws/sso_roles.yaml"
 
   export MISE_ENV=macos
+
+  export HK_PROFILE=slow
 fi
 
 # If in a repo that doesn't fetch all remote branchs, gcr (git checkout remote) will fetch the branch and checkout
@@ -58,3 +63,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export MISE_ENV=macos # loads mise.macos.toml
+eval "$(mise activate zsh)"
